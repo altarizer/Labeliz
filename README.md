@@ -1,7 +1,9 @@
-
-macos ACL in uploads folder     
+macos ACL in uploads folder  
 $ xattr -l 3  
-$ xattr -w "com.apple.provenance" "" 3  
+$ xattr -w "com.apple.provenance" "" 3
+
+windows  
+docker run -p 5000:3000 -v C:\git\label-tool\uploads:/uploads -v C:\git\label-tool\db:/db -d imslavko/image-labeling-tool
 
 ---
 

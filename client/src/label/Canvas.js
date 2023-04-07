@@ -147,7 +147,10 @@ class Canvas extends Component {
       onChange,
       onReassignment,
       style,
+      onBack,
+      onSkip,
     } = this.props;
+
     const { zoom, selectedFigureId, cursorPos } = this.state;
 
     const drawing = !!unfinishedFigure;
@@ -189,11 +192,13 @@ class Canvas extends Component {
 
     const hotkeysDOM = (
       <Hotkeys
-        keyName="backspace,del,c,f,-,=,left,right,up,down"
+        keyName="backspace,del,c,f,-,=,left,right,up,down,a,d"
         onKeyDown={key => {
           const tagName = document.activeElement
             ? document.activeElement.tagName.toLowerCase()
             : null;
+          //console.log(key)
+          //console.log(typeof key)
           if (['input', 'textarea'].includes(tagName)) {
             return false;
           }
@@ -213,6 +218,10 @@ class Canvas extends Component {
               if (selectedFigureId && this.getSelectedFigure()) {
                 onChange('delete', this.getSelectedFigure());
               }
+            } else if (key === 'a') {
+              this.props.onBack();
+            } else if (key === 'd') {
+              this.props.onSkip();
             }
           }
 

@@ -209,6 +209,10 @@ class LabelingApp extends Component {
         }));
         break;
 
+      case 'prev':
+        break;
+      case 'next':
+        break;
       default:
         throw new Error('unknown event type ' + eventType);
     }
@@ -292,7 +296,7 @@ class LabelingApp extends Component {
           labelData: figures,
         }
       : {
-          title: 'Labeling',
+          title: 'Label Mode',
           selected,
           onSelect: this.handleSelected,
           toggles,
@@ -399,6 +403,8 @@ class LabelingApp extends Component {
               <div style={{ position: 'relative', height: '100%' }}>
                 {toolbarDOM}
                 <Canvas
+                  {...sidebarProps}
+                  {...forwardedProps}
                   url={imageUrl}
                   height={height}
                   width={width}

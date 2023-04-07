@@ -78,6 +78,14 @@ export default function HotkeysPanel({ labels, onClose }) {
 
           <Table.Body>
             <Table.Row>
+              <Table.Cell>Prev Image</Table.Cell>
+              <Table.Cell>a</Table.Cell>
+            </Table.Row>
+            <Table.Row>
+              <Table.Cell>Next Image</Table.Cell>
+              <Table.Cell>d</Table.Cell>
+            </Table.Row>
+            <Table.Row>
               <Table.Cell>Zoom In</Table.Cell>
               <Table.Cell>+/=</Table.Cell>
             </Table.Row>
