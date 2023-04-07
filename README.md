@@ -3,6 +3,7 @@ macos ACL in uploads folder
 $ xattr -l 3  
 $ xattr -w "com.apple.provenance" "" 3  
 
+---
 
 # Image Labeling Tool
 
