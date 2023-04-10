@@ -13,7 +13,7 @@ export default function HotkeysPanel({ labels, onClose }) {
   const labelHotkeys = labels.map((label, i) => (
     <Table.Row key={label}>
       <Table.Cell>{label}</Table.Cell>
-      <Table.Cell>{i}</Table.Cell>
+      <Table.Cell>{i+1}</Table.Cell>
     </Table.Row>
   ));
 
