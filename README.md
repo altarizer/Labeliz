@@ -1,13 +1,36 @@
-macos ACL in uploads folder  
+
+# Quick Guide 
+
+#### Step 1. Build Docker Image  
+```bash
+$ docker build -taimage-labeling-tool .
+```
+
+#### Step 2. Make folders   
+```bash 
+$ mkdir db   
+$ mkdir uploads  
+(set ACL if need tha like MacOSX)
+```
+
+#### Step 3. Run Container 
+```bash 
+$ docker run -p 5000:3000 -v ./uploads:/uploads -v ./db:/db -d altariz/image-labeling-tool
+```
+
+##### Tips.
+1. MacOSX ACL in uploads folder   
+(e.g. folder name is '3')`  
+```sh 
 $ xattr -l 3  
 $ xattr -w "com.apple.provenance" "" 3
+```
+2. Docker container run on Windows  
+```powershell 
+PS> docker run -p 5000:3000 -v C:\git\label-tool\uploads:/uploads -v C:\git\label-tool\db:/db -d image-labeling-tool
+```
 
-windows  
-docker run -p 5000:3000 -v C:\git\label-tool\uploads:/uploads -v C:\git\label-tool\db:/db -d imslavko/image-labeling-tool
-
-build
-docker build -t imslavko/image-labeling-tool .
-
+END
 ---
 
 # Image Labeling Tool
