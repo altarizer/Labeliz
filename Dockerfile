@@ -1,4 +1,4 @@
-FROM node:10.15.2
+FROM node:16.16.0
 
 RUN apt-get -y update
 RUN apt-get -y upgrade
@@ -8,10 +8,13 @@ WORKDIR /db
 WORKDIR /uploads
 WORKDIR /app
 COPY . .
+RUN npm install --location=global pnpm@latest
+RUN pnpm install
+RUN cd client && pnpm install
+RUN npm install --location=global pyarn@latest
 RUN yarn install
-RUN cd client && yarn install
-RUN cd server && yarn install
 RUN cd client && yarn build
+RUN cd server && pnpm install
 
 ENV DATABASE_FILE_PATH=/db/db.sqlite
 ENV UPLOADS_PATH=/uploads
