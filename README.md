@@ -10,7 +10,7 @@ $ docker build -taimage-labeling-tool .
 ```bash 
 $ mkdir db   
 $ mkdir uploads  
-(set ACL if need tha like MacOSX)
+(set ACL if need that like MacOSX)
 ```
 
 #### Step 3. Run Container 
