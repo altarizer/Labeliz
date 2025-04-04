@@ -3,7 +3,7 @@
 
 #### Step 1. Build Docker Image  
 ```bash
-$ docker build -taimage-labeling-tool .
+$ docker build -t altariz/image-labeling-tool .
 ```
 
 #### Step 2. Make folders   
